@@ -1,0 +1,383 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.desc {
+    width: 50%;
+}
+
+.descleft {
+    width: 50%;
+}
+
+.heading {
+    color: #ef8a14;
+    position: center;
+    text-align: center;
+}
+
+.bheading {
+    color: blue;
+}
+
+.subheading {
+    color: #ef8a14;
+}
+
+.center {
+    text-align: center;
+}
+
+
+.orangeflexcontainer {
+    width: 50%;
+    color: #ef8a14;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+.link {
+    color: cornflowerblue;
+    text-underline-offset: auto;
+}
+
+.container1 {
+    display: inline-flex;
+    width: 100%;
+}
+
+.lblue {
+    color: #5DADE2;
+}
+
+.para {
+    text-align: center;
+}
+
+.flextitle {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.titlecontainer {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.flexcontainer {
+    display: inline-flex;
+    width: 50%;
+    align-items: center;
+}
+
+.pdfbutton {
+    background-color: #ef8a14;
+    border: none;
+    color: white;
+    padding: 5px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.container3 {
+    display: inline-flex;
+    width: 100%;
+}
+
+#pie1 {
+    width: 50%;
+}
+
+#pie2 {
+    width: 50%;
+}
+
+#pie3 {
+    width: 100%;
+}
+
+#pie4 {
+    width: 100%;
+}
+
+#pie5 {
+    width: 80%;
+}
+
+.bluebg {
+    background-color: blue;
+    color: white;
+}
+
+.orangebg {
+    background-color: #ef8a14;
+    color: white;
+}
+
+.redbg {
+    background-color: red;
+    color: white;
+}
+
+.greenbg {
+    background-color: green;
+    color: white;
+}
+
+.yellowbg {
+    background-color: yellow;
+    color: white;
+}
+
+#bar {
+    width: 70%;
+}
+
+#bar1 {
+    width: 50%;
+}
+
+#bar2 {
+    width: 70%;
+    padding: 10px;
+}
+
+#Doughnut1 {
+    width: 50%;
+}
+
+.resultoption {
+    height: 10%;
+    background-color: lightgray;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#table-widget td, #table-widget th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table-widget tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#table-widget tr:hover {
+    background-color: #ddd;
+}
+
+#table-widget th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+    text-align: center;
+    background-color: #1b6ec2;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.box {
+    border-radius: 5px;
+    background-color: lightgray;
+    height: 40%;
+}
+
+.grid-item {
+    background-color: red;
+}
+
+.item-box {
+    color: black;
+    border: 2px solid #BBBBBB;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+
+.survey-button {
+    margin-right: 10px;
+}
+
+.dashboard-item {
+    margin-right: 5px;
+    height: 400px;
+    overflow: auto;
+}
+
+    .dashboard-item h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+.dashboard-item-container {
+    height: 200px;
+}
+
+.survey-container {
+    float: left;
+}
+
+.dashboard-item-container button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.content {
+    padding-left: 5px;
+    padding-top: 0;
+}
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vw;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@media print {
+    .sidebar, .top-row, .px-4, .resulttitle .pdfbutton {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .overlay-toggler {
+    }
+
+    .collapse {
+        display: block;
+    }
+
+    .resbutton {
+        float: right;
+        padding-right: 20px;
+        border-radius: 5%;
+        height: 10%;
+        background-color: #1b6ec2;
+        text-align: center;
+        font-size: 12px;
+        color: white;
+    }
+
+    .overlay {
+        position: fixed; /* Sit on top of the page content */
+        display: none; /* Hidden by default */
+        width: 80%; /* Full width (cover the whole page) */
+        height: 80%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
+
+    .content {
+        padding-top: 1.1rem;
+    }
+
+    .valid.modified:not([type=checkbox]) {
+        outline: 1px solid #26b050;
+    }
+
+    .invalid {
+        outline: 1px solid red;
+    }
+
+    .validation-message {
+        color: red;
+    }
+
+    #blazor-error-ui {
+        background: lightyellow;
+        bottom: 0;
+        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+        display: none;
+        left: 0;
+        padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+        #blazor-error-ui .dismiss {
+            cursor: pointer;
+            position: absolute;
+            right: 0.75rem;
+            top: 0.5rem;
+        }

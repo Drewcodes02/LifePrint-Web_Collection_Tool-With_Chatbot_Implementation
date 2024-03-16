@@ -1,0 +1,710 @@
+﻿@page "/viewresult/{resultId:int}"
+@page "/viewresult"
+
+
+
+<h2 class="resulttitle">Results for #@resultId</h2>
+<div class="heading"><h2 class=lblue>lite FOCUS: Benchmark Score</h2><button class="pdfbutton" onclick="window.print()">Download Results</button></div>
+<div>
+    <p class="para">
+        Is the 1st lifeprint benchmark report in our Self-Mastery series. It's a personalised snapshot unique to you
+        across the 5-core-life-domains and lite-FOCUS's 28 subdomains. Simple scores and visual benchmarks help you define
+        where you are right now in your life.
+    </p>
+
+</div>
+<div>
+    <li>LIFEPRINT SCORE: Your lite-FOCUS lifeprint score is an overall summary score with an assigned Headline Status.</li>
+    <li>DETAILED SCORES: Include the 5-core life-domains and lite-FOCUS's 28 subdomains, each with an assigned Status.</li>
+    <p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+</div>
+<div class="center">
+    <h4 class="titlecontainer">OPTIMAL SCORING: Scores</h4>
+    <li>
+        Scores are calculated using key Self-Mastery and
+        Wellbeing metrics to measure optimal-functioning.
+    </li>
+    <li>
+        Scores indicate where you are right now in your life,
+        within your own unique scale of optimal-functioning.
+    </li>
+</div>
+<p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+<div>
+    <h5 class="orangeflexcontainer">5-CORE LIFE-DOMAINS [HBSVW]:</h5><h5> HEALTH | BEING | SOCIAL | VOCATION | WEALTH</h5>
+    <p class="para">
+        Within lite-FOCUS the 5-core life-domains encompass 28 sub-domains, profi
+
+        ling areas to initiate the greatest positive impact in; to
+
+        improve life-experience, overcome life-challenge, maximise Self-Mastery, Wellbeing and levels of optimal-functioning.
+    </p>
+</div>
+<h4 class="orangeflexcontainer">DETAILED SCORING</h4>
+<div class="container1">
+    <div class="desc">
+        <p>
+            Detailed lifeprint scores drill down into the 5-core life-domains
+            and 28 subdomains specific
+
+            to lite-FOCUS. Scores are assigned a
+            benchmark-status to indicate levels of optimal-functioning unique to
+            you. Life-domain and subdomain scores are ordered into four
+            categories of optimal-functioning:
+        </p>
+        <p><mark class="redbg">CRITICAL</mark><mark class="orangebg">PRIORITY</mark><mark class="yellowbg">ATTENTION</mark><mark class="greenbg">OPTIMAL</mark></p>
+        <p>
+            A status of optimal being highest and critical lowest. Lower
+            scores identify life-domains and subdomains in need of urgent
+            personal FOCUS, INQUIRY & TRANSFORMATION.
+        </p>
+    </div>
+    <div class="descleft">
+        <table id="bar">
+            <tr class="orangebg">
+                <th>SCORE KEY</th>
+                <th>STATUS</th>
+            </tr>
+            <tr>
+                <td>0% to 39%</td>
+                <td><mark class="redbg">CRITICAL</mark></td>
+            </tr>
+            <tr>
+                <td>40% to 69%</td>
+                <td><mark class="orangebg">PRIORITY</mark></td>
+            </tr>
+            <tr>
+                <td>70% to 85%</td>
+                <td><mark class="yellowbg">ATTENTION</mark></td>
+            </tr>
+            <tr>
+                <td>86% to 100%</td>
+                <td><mark class="greenbg">OPTIMAL</mark></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+
+<h3 class="center">5-Core Life Domains: HSBVW</h3>
+
+<div>
+    <div class="container1">
+        <div class="descleft">
+            <table id="bar">
+                <tr class="bluebg">
+                    <th>LIFE DOMAINS    </th>
+                    <th>SCORE   </th>
+                    <th>STATUS  </th>
+                </tr>
+                <tr>
+                    <td>HEALTH</td>
+                    <td>@hpercent %</td>
+                    <td><mark class=@hpstatuscolor>@hpstatus</mark></td>
+                </tr>
+                <tr>
+                    <td>BEING</td>
+                    <td>40%</td>
+                    <td>PRIORITY</td>
+                </tr>
+                <tr>
+                    <td>SOCIAL</td>
+                    <td>50%</td>
+                    <td>ATTENTION</td>
+                </tr>
+                <tr>
+                    <td>VOCATION</td>
+                    <td>60%</td>
+                    <td>OPTIMAL</td>
+                </tr>
+                <tr>
+                    <td>WEALTH</td>
+                    <td>70%</td>
+                    <td>OPTIMAL</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="descleft">
+            <Chart Id="bar2"
+                   Type="@Chart.ChartType.Bar"
+                   Data="@(new[] { @hscore, @bscore, @sscore, @vscore, @wscore })"
+                   BackgroundColor="@(new[] { "blue","blue","blue","blue","blue"})"
+                   Labels="@(new[] { "H","B","S","V","W"})"></Chart>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div>
+    <h4 class="subheading">Health: <mark class=@hstatuscolor>@hstatus</mark></h4>
+    <div class="container1">
+
+
+        <p class="desc">
+            <br />Your snapshot HEALTH benchmark score and status encompass
+            four sub-domains: General Health, Energy to Fatigue, Emotional
+            Wellbeing, and Health v. Social Functioning, which rate your levels of
+            optimal-functioning for HEALTH at time of data input.
+        </p>
+        <Chart Id="pie1"
+               Type="@Chart.ChartType.Pie"
+               Data="@(new[] { @hpercent, @potential})"
+               BackgroundColor="@(new[] { "blue","gray"})"
+               Labels="@(new[] { "Health (%)","Potential (%)"})"></Chart>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<div class="container1">
+    <div class="desc">
+        <h4 class="subheading">Health: <mark class=@hstatuscolor>@hstatus</mark></h4>
+        <p>
+            Your snapshot HEALTH benchmark score and status encompass
+            four sub-domains: General Health, Energy to Fatigue, Emotional Wellbeing, and Health v. Social Functioning, which rate your levels of
+            optimal-functioning for HEALTH at time of data input.
+        </p>
+    </div>
+    <div class="desc">
+        <p>text goes here</p>
+    </div>
+</div>
+<div class="container1">
+    <div class="desc">
+        <h4 class="subheading">Being: <mark class=@bstatuscolor>@bstatus</mark></h4>
+        <p>
+            BEING encompasses eight sub-domains of: Self-Love, Autonomy &
+            Self-Direction, Self-Acceptance & Self Esteem, Emotional
+            Acceptance & Expression, Trust & Responsibility, Interpersonal
+            Resilience, Perceived Choice and Self-Awareness, where internal
+            psychological & physiological aspects of your BEING interact with
+            the external variables of the world.
+        </p>
+    </div>
+    <div class="desc">
+        <p>text goes here</p>
+    </div>
+</div>
+<div class="container1">
+    <div class="desc">
+        <h4 class="subheading">Social: <mark class=@sstatuscolor>@sstatus</mark></h4>
+        <p>
+            Your SOCIAL score encompasses the seven sub-domains of: Family,
+            Friends, Partner, Recreation, Networking, Community, and Events,
+            measuring the connection frequency and satisfaction you have
+            within these subdomains, to calculate and benchmark your unique
+            levels of optimal-functioning within each.
+        </p>
+    </div>
+    <div class="desc">
+        <p>text goes here</p>
+    </div>
+</div>
+<div class="container1">
+    <div class="desc">
+        <h4 class="subheading">Vocation: <mark class=@vstatuscolor>@vstatus</mark></h4>
+        <p>
+            Your VOCATION score encompasses ve sub-domains of:
+            Vocational Alignment, Engagement, Pep, Dedication, and Immersion.
+            VOCATION measures your alignment to, immersion in, energy and
+            enthusiasm for work, helping calculate your unique levels of
+            optimal-functioning to your current vocation and work-role.
+        </p>
+    </div>
+    <div class="desc">
+        <p>text goes here</p>
+    </div>
+</div>
+<div class="container1">
+    <div class="desc">
+        <h4 class="subheading">Wealth: <mark class=@wstatuscolor>@wstatus</mark></h4>
+        <p>
+            Your WEALTH score encompasses three sub-domains of: Wealth
+            Satisfaction, Current Wealth, and Future Wealth Outlook, measuring
+            your current wealth perspectives and wealth potential over time,
+            calculating your unique benchmark levels of optimal-functioning
+            within your WEALTH life-domain.
+        </p>
+    </div>
+    <div class="desc">
+        <p>text goes here</p>
+    </div>
+</div>
+<p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+<h3 class="subheading">Health: Subdomains</h3>
+<p>
+    HEALTH is fundamental to our wellbeing and optimal-functioning across all levels of our physicality, consciousness and life-domains. The bi-
+    directional relationships between Psychological and Physiological health impact our states of BEING through our awareness and ability to
+
+    self-regulate our cognitive-functions, thoughts, emotions, motivations, and behaviours across all our life-domains and subdomains.
+</p>
+<div>
+    <div class="container1">
+        <Chart Id="pie2"
+               Type="@Chart.ChartType.Pie"
+               Data="@(new[] { @HGhpercent, @HEfpercent, @HEwpercent})"
+               BackgroundColor="@(new[] { "blue","gray", "orange"})"
+               Labels="@(new[] { "GH","EF", "EW"})"></Chart>
+
+        <table id="bar">
+            <tr class="orangebg">
+                <th>HEALTH SUBDOMAINS    </th>
+                <th>SCORE   </th>
+                <th>STATUS  </th>
+            </tr>
+            <tr>
+                <td>General Health (GH)</td>
+                <td>@HGhpercent %</td>
+                <td><mark class=@HGhpstatuscolor>@HGhpstatus</mark></td>
+            </tr>
+            <tr>
+                <td>Energy to Fatigue (EF)</td>
+                <td>@HEfpercent %</td>
+                <td><mark class=@HEfpstatuscolor>@HEfpstatus</mark></td>
+            </tr>
+            <tr>
+                <td>Emotional Wellbeing (EW)</td>
+                <td>@HEwpercent %</td>
+                <td><mark class=@HEwpstatuscolor>@HEwpstatus</mark></td>
+            </tr>
+            <tr>
+                <td>Health v. Social Functioning (HvSF)</td>
+                <td>%</td>
+                <td><mark class="redbg">CRITICAL</mark></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <div class="container1">
+        <div>
+            <h5 class="orangeflexcontainer">General Health: <mark class=@HGhpstatuscolor>@HGhpstatus</mark></h5>
+            <p class="descleft">
+                Optimal-functioning for General Health, scores your health-outlook
+                now and in comparison to one year ago with how you rate your
+                current approach to diet and nutrition, and your levels of physical
+                activity.
+            </p>
+        </div>
+        <Chart Id="pie3"
+               Type="@Chart.ChartType.Pie"
+               Data="@(new[] { @HGhpercent, @ghpotential})"
+               BackgroundColor="@(new[] { "blue","gray"})"
+               Labels="@(new[] { "GH (%)","Potential (%)"})"></Chart>
+
+    </div>
+    <br />
+    <br />
+    <div class="container1">
+        <div>
+            <h5 class="orangeflexcontainer">Energy to Fatigue: <mark class=@HEfpstatuscolor>@HEfpstatus</mark></h5>
+            <p class="descleft">
+                Energy to fatigue optimal-functioning scores capture your current
+                levels of energy at the time of data input and for the 4 weeks prior.
+                Providing your initial benchmark of energy v. fatigue levels.
+            </p>
+        </div>
+
+        <Chart Id="pie4"
+               Type="@Chart.ChartType.Pie"
+               Data="@(new[] { @HEfpercent, @efpotential})"
+               BackgroundColor="@(new[] { "blue","gray"})"
+               Labels="@(new[] { "EF (%)","Potential (%)"})"></Chart>
+
+    </div>
+    <br />
+    <br />
+    <div class="container1">
+        <div>
+            <h5 class="orangeflexcontainer">Emotional Wellbeing: <mark class=@HEwpstatuscolor>@HEwpstatus</mark></h5>
+            <p class="descleft">
+                Optimal-functioning for Emotional Wellbeing provides you with an
+                indicative score of how you've felt at the time of data input and for
+                the preceding four weeks.
+            </p>
+        </div>
+        <Chart Id="pie5"
+               Type="@Chart.ChartType.Pie"
+               Data="@(new[] { @HEwpercent, @ewpotential})"
+               BackgroundColor="@(new[] { "blue","gray"})"
+               Labels="@(new[] { "EW (%)","Potential (%)"})"></Chart>
+
+    </div>
+    <div class="container1">
+        <div>
+            <h5 class="orangeflexcontainer">Health v. Social Functioning: <mark class="yellowbg">ATTENTION</mark></h5>
+            <p class="descleft">
+                Health versus Social Functioning provides a score of optimal-
+                functioning specifi
+
+                c to how your general health and wellbeing have
+                impacted social interactions over the four weeks preceding the time
+                of data input.
+            </p>
+        </div>
+        <p class="descleft">Graph goes here</p>
+
+    </div>
+</div>
+<div class="center">
+    <p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4>Subdomains by STATUS</h4>
+    <p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4>Of the 28 lite-FOCUS subdomains benchmarked across your 5-core life-domains:</h4>
+    <h4><bold>5</bold> of your subdomains are marked as <mark class="redbg">CRITICAL</mark></h4>
+    <h4><bold>17</bold> of your subdomains are flagged as a <mark class="orangebg">PRIORITY</mark></h4>
+    <h4><bold>3</bold> of your subdomains are in need of <mark class="yellowbg">ATTENTION</mark></h4>
+    <h4><bold>3</bold> of your subdomains are achieving status <mark class="greenbg">OPTIMAL</mark></h4>
+    <br />
+    <h4>Chart of status division goes here test below</h4>
+    <p class="orangebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4>Here's where you're doing well already: Your TOP 3 Subdomains</h4>
+    <p class="orangebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="heading">1.</h4>
+    <p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="heading">2. </h4>
+    <p class="heading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="heading">3. </h4>
+    <p class="orangebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <br />
+    <p class="bluebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4>Here's where you're not doing so well: Your BOTTOM 3 Subdomains</h4>
+    <p class="bluebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="bheading">28.</h4>
+    <p class="bheading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="bheading">27.</h4>
+    <p class="bheading">-----------------------------------------------------------------------------------------------------------------------------</p>
+    <h4 class="bheading">26.</h4>
+    <p class="bluebg">-----------------------------------------------------------------------------------------------------------------------------</p>
+</div>
+
+
+@code {
+    [Parameter]
+    public int resultId { get; set; }
+    public int? hresult;
+    public double? hperc;
+    public double? HGhperc;
+    public double? HEwperc;
+    public double? HEfperc;
+    public int? bresult;
+    public int? sresult;
+    public int? wresult;
+    public int? vresult;
+    public string potential;
+    public string ghpotential;
+    public string efpotential;
+    public string ewpotential;
+
+    public string hstatus;
+    public string hstatuscolor;
+    public string bstatus;
+    public string bstatuscolor;
+    public string sstatus;
+    public string sstatuscolor;
+    public string wstatus;
+    public string wstatuscolor;
+    public string vstatus;
+    public string vstatuscolor;
+    public string hpstatus;
+    public string hpstatuscolor;
+
+    /*public List<int?> hresult = new List<int?>();
+    public List<int?> sresult = new List<int?>();
+    public List<int?> bresult = new List<int?>();
+    public List<int?> wresult = new List<int?>();
+    public List<int?> vresult = new List<int?>();
+    public List<double?> hperc = new List<double?>();*/
+
+    public string hscore;
+    public string sscore;
+    public string bscore;
+    public string wscore;
+    public string vscore;
+    public string hpercent;
+    public string HGhpercent;
+    public string HEwpercent;
+    public string HEfpercent;
+    public string HGhpstatus;
+    public string HGhpstatuscolor;
+    public string HEwpstatus;
+    public string HEwpstatuscolor;
+    public string HEfpstatus;
+    public string HEfpstatuscolor;
+    protected override Task OnInitializedAsync()
+    {
+        GetUserScore();
+        return Task.CompletedTask;
+    }
+
+    public void GetUserScore()
+    {
+        using var db = new LifeprintDatabaseContext();
+        var healthResult = db.Results.Where(r => r.ResultId == resultId).ToList()[0].HealthId;
+        var hRes = db.Health.Where(h => h.HealthId == healthResult).ToList()[0];
+        var beingResult = db.Results.Where(r => r.ResultId == resultId).ToList()[0].BeingId;
+        var bRes = db.Being.Where(b => b.BeingId == beingResult).ToList()[0];
+        var socialResult = db.Results.Where(r => r.ResultId == resultId).ToList()[0].SocialId;
+        var sRes = db.Social.Where(s => s.SocialId == socialResult).ToList()[0];
+        var wealthResult = db.Results.Where(r => r.ResultId == resultId).ToList()[0].WealthId;
+        var wRes = db.Wealth.Where(w => w.WealthId == wealthResult).ToList()[0];
+        var vocationResult = db.Results.Where(r => r.ResultId == resultId).ToList()[0].VocationId;
+        var vRes = db.Vocation.Where(v => v.VocationId == vocationResult).ToList()[0];
+
+        hresult = hRes.HGhTotScore + /*hRes.HHvsfTotScore +*/ hRes.HEwTotScore + hRes.HEfTotScore;
+        hscore = hresult.ToString();
+
+        hperc = hRes.HPercent2dpScore;
+        hpercent = hperc.ToString();
+
+        HGhperc = hRes.HGhPercent2dpScore;
+        HGhpercent = HGhperc.ToString();
+
+        /*HHvsfperc = hRes.HHvsfPercent2dpScore;
+        HHvsfpercent = HHVsfperc.ToString();*/
+
+        HEwperc = hRes.HEwPercent2dpScore;
+        HEwpercent = HEwperc.ToString();
+
+        HEfperc = hRes.HEfPercent2dpScore;
+        HEfpercent = HEfperc.ToString();
+
+        potential = (100 - hperc).ToString();
+        ghpotential = (100 - HGhperc).ToString();
+        efpotential = (100 - HEfperc).ToString();
+        ewpotential = (100 - HEwperc).ToString();
+
+        sresult = sRes.S10NScore + sRes.S11CScore + sRes.S12EScore + sRes.S13FmScore + sRes.S14FmScore + sRes.S15FrScore + sRes.S16PScore + sRes.S17RScore + sRes.S18EScore + sRes.S19NScore + sRes.S20CScore + sRes.S2HvsfScore + sRes.S3FmScore + sRes.S4FmScore + sRes.S5FrScore + sRes.S6FrScore + sRes.S7PScore + sRes.S8RScore + sRes.S9NScore;
+        sscore = sresult.ToString();
+
+        bresult = bRes.B10IrScore + bRes.B11SaseScore + bRes.B12AsdScore + bRes.B13AsdScore + bRes.B14AsdScore + bRes.B15IrScore + bRes.B16TrScore + bRes.B17SaseScore + bRes.B18TrScore + bRes.B19PcScore + bRes.B20SaScore + bRes.B21PcScore + bRes.B21PcScore + bRes.B22SaScore + bRes.B23PcScore + bRes.B24SaScore + bRes.B25PcScore + bRes.B26SaScore + bRes.B27PcScore + bRes.B28SaScore + bRes.B1SlScore + bRes.B2SlScore + bRes.B3SlScore + bRes.B4EafeScore + bRes.B5AsdScore + bRes.B6TrScore + bRes.B7EafeScore + bRes.B8AsdScore + bRes.B9SaseScore;
+        bscore = bresult.ToString();
+
+        wresult = wRes.W1WsCwpScore + wRes.W2WsCwpScore + wRes.W3WsCwpScore + wRes.W4WsCwpScore + wRes.W5CwlScore + wRes.W6CwlScore + wRes.W7CwlScore + wRes.W8FwoCwpScore + wRes.W9FwoCwpScore + wRes.W10FwoCwpScore;
+        wscore = wresult.ToString();
+
+        vresult = vRes.V1PPfbexhScore + vRes.V2FlCsbResScore + vRes.V3DMpScore + vRes.V4FlAamScore + vRes.V5IFlTrotScore + vRes.V6PPfbexhScore + vRes.V7DScore + vRes.V8IFlCotahScore + vRes.V9DImScore + vRes.V10PImPfbcynScore + vRes.V11IImScore + vRes.V12FlCgscore + vRes.V13DPfbcynScore + vRes.V14IScore + vRes.V15FlSocScore + vRes.V16PImscore + vRes.V17DFlAamScore + vRes.V18FlUfPfbeffScore + vRes.V19IScore + vRes.V20PResScore + vRes.V21FlAePfbeffScore + vRes.V22IResScore + vRes.V23PResScore + vRes.V24VaFlAeScore + vRes.V25VaFlAeScore + vRes.V26VaFlCgScore + vRes.V27VaPafulPfbeffScore + vRes.V28VaPacapScore + vRes.V29VaOafulScore + vRes.V30VaOatrtEmPfbeffScore + vRes.V31VaPatrtEmScore + vRes.V32VaOacapRscEmPfbrscScore + vRes.V33VaOatrtPfbcynScore + vRes.V34VaPatrtEmPfbcynScore + vRes.V35VaOacapDmdPfbdmdScore;
+        vscore = vresult.ToString();
+
+        if (HEfperc < 39)
+        {
+            HEfpstatus = "CRITICAL";
+            HEfpstatuscolor = "redbg";
+        }
+        if (HEfperc > 39 && HEfperc < 69)
+        {
+            HEfpstatus = "PRIORITY";
+            HEfpstatuscolor = "orangebg";
+        }
+        if (HEfperc > 69 && HEfperc < 85)
+        {
+            HEfpstatus = "ATTENTION";
+            HEfpstatuscolor = "yellowbg";
+        }
+        if (HEfperc > 85 && HEfperc < 100)
+        {
+            HEwpstatus = "OPTIMAL";
+            HEfpstatuscolor = "greenbg";
+        }
+
+        if (HEwperc < 39)
+        {
+            HEwpstatus = "CRITICAL";
+            HEwpstatuscolor = "redbg";
+        }
+        if (HEwperc > 39 && HEwperc < 69)
+        {
+            HEwpstatus = "PRIORITY";
+            HEwpstatuscolor = "orangebg";
+        }
+        if (HEwperc > 69 && HEwperc < 85)
+        {
+            HEwpstatus = "ATTENTION";
+            HEwpstatuscolor = "yellowbg";
+        }
+        if (HEwperc > 85 && HEwperc < 100)
+        {
+            HEwpstatus = "OPTIMAL";
+            HEwpstatuscolor = "greenbg";
+        }
+
+        if (HGhperc < 39)
+        {
+            hpstatus = "CRITICAL";
+            hpstatuscolor = "redbg";
+        }
+        if (HGhperc > 39 && HGhperc < 69)
+        {
+            hpstatus = "PRIORITY";
+            hpstatuscolor = "orangebg";
+        }
+        if (HGhperc > 69 && HGhperc < 85)
+        {
+            hpstatus = "ATTENTION";
+            hpstatuscolor = "yellowbg";
+        }
+        if (HGhperc > 85 && HGhperc < 100)
+        {
+            hpstatus = "OPTIMAL";
+            hpstatuscolor = "greenbg";
+        }
+
+        if (hperc < 39)
+        {
+            HGhpstatus = "CRITICAL";
+            HGhpstatuscolor = "redbg";
+        }
+        if (hperc > 39 && hperc < 69)
+        {
+            HGhpstatus = "PRIORITY";
+            HGhpstatuscolor = "orangebg";
+        }
+        if (hperc > 69 && hperc < 85)
+        {
+            HGhpstatus = "ATTENTION";
+            HGhpstatuscolor = "yellowbg";
+        }
+        if (hperc > 85 && hperc < 100)
+        {
+            HGhpstatus = "OPTIMAL";
+            HGhpstatuscolor = "greenbg";
+        }
+
+        if (hresult < 39)
+        {
+            hstatus = "CRITICAL";
+            hstatuscolor = "redbg";
+        }
+        if (hresult > 39 && hresult < 69)
+        {
+            hstatus = "PRIORITY";
+            hstatuscolor = "orangebg";
+        }
+        if (hresult > 69 && hresult < 85)
+        {
+            hstatus = "ATTENTION";
+            hstatuscolor = "yellowbg";
+        }
+        if (hresult > 85 && hresult < 100)
+        {
+            hstatus = "OPTIMAL";
+            hstatuscolor = "greenbg";
+        }
+
+        if (bresult < 39)
+        {
+            bstatus = "CRITICAL";
+            bstatuscolor = "redbg";
+        }
+        if (bresult > 39 && bresult < 69)
+        {
+            bstatus = "PRIORITY";
+            bstatuscolor = "orangebg";
+        }
+        if (bresult > 69 && bresult < 85)
+        {
+            bstatus = "ATTENTION";
+            bstatuscolor = "yellowbg";
+        }
+        if (bresult > 85 && bresult < 100)
+        {
+            bstatus = "OPTIMAL";
+            bstatuscolor = "greenbg";
+        }
+
+        if (sresult < 39)
+        {
+            sstatus = "CRITICAL";
+            sstatuscolor = "redbg";
+        }
+        if (sresult > 39 && sresult < 69)
+        {
+            sstatus = "PRIORITY";
+            sstatuscolor = "orangebg";
+        }
+        if (sresult > 69 && sresult < 85)
+        {
+            sstatus = "ATTENTION";
+            sstatuscolor = "yellowbg";
+        }
+        if (sresult > 85 && sresult < 100)
+        {
+            sstatus = "OPTIMAL";
+            sstatuscolor = "greenbg";
+        }
+
+        if (wresult < 39)
+        {
+            wstatus = "CRITICAL";
+            wstatuscolor = "redbg";
+        }
+        if (wresult > 39 && wresult < 69)
+        {
+            wstatus = "PRIORITY";
+            wstatuscolor = "orangebg";
+        }
+        if (wresult > 69 && wresult < 85)
+        {
+            wstatus = "ATTENTION";
+            wstatuscolor = "yellowbg";
+        }
+        if (wresult > 85 && wresult < 100)
+        {
+            wstatus = "OPTIMAL";
+            wstatuscolor = "greenbg";
+        }
+
+        if (vresult < 39)
+        {
+            vstatus = "CRITICAL";
+            vstatuscolor = "redbg";
+        }
+        if (vresult > 39 && vresult < 69)
+        {
+            vstatus = "PRIORITY";
+            vstatuscolor = "orangebg";
+        }
+        if (vresult > 69 && vresult < 85)
+        {
+            vstatus = "ATTENTION";
+            vstatuscolor = "yellowbg";
+        }
+        if (vresult > 85 && vresult < 100)
+        {
+            vstatus = "OPTIMAL";
+            vstatuscolor = "greenbg";
+        }
+        /*
+        hresult = hRes.Select(a => a.HGhTotScore + a.HHvsfTotScore + a.HEfTotScore + a.HEwTotScore).ToList();
+        hscore = hresult[0].ToString();
+
+        hperc = hRes.Select(a => a.HPercent2dpScore).ToList();
+        hpercent = hpercent.ToString();
+
+
+        sresult = sRes.Select(a => a.S10NScore + a.S11CScore + a.S12EScore + a.S13FmScore + a.S14FmScore + a.S15FrScore + a.S16PScore + a.S17RScore + a.S18EScore + a.S19NScore + a.S20CScore + a.S2HvsfScore + a.S3FmScore + a.S4FmScore + a.S5FrScore + a.S6FrScore + a.S7PScore + a.S8RScore + a.S9NScore).ToList();
+        sscore = sresult[resultId].ToString();
+
+
+        bresult = bRes.Select(a => a.B10IrScore + a.B11SaseScore + a.B12AsdScore + a.B13AsdScore + a.B14AsdScore + a.B15IrScore + a.B16TrScore + a.B17SaseScore + a.B18TrScore + a.B19PcScore + a.B20SaScore + a.B21PcScore + a.B21PcScore + a.B22SaScore + a.B23PcScore + a.B24SaScore + a.B25PcScore + a.B26SaScore + a.B27PcScore + a.B28SaScore + a.B1SlScore + a.B2SlScore + a.B3SlScore + a.B4EafeScore + a.B5AsdScore + a.B6TrScore + a.B7EafeScore + a.B8AsdScore + a.B9SaseScore).ToList();
+        bscore = bresult[resultId].ToString();
+
+        wresult = wRes.Select(a => a.W1WsCwpScore + a.W2WsCwpScore + a.W3WsCwpScore + a.W4WsCwpScore + a.W5CwlScore + a.W6CwlScore + a.W7CwlScore + a.W8FwoCwpScore + a.W9FwoCwpScore + a.W10FwoCwpScore).ToList();
+        wscore = wresult[resultId].ToString();
+
+        vresult = vRes.Select(a => a.V1PPfbexhScore + a.V2FlCsbResScore + a.V3DMpScore + a.V4FlAamScore + a.V5IFlTrotScore + a.V6PPfbexhScore + a.V7DScore + a.V8IFlCotahScore + a.V9DImScore + a.V10PImPfbcynScore + a.V11IImScore + a.V12FlCgscore + a.V13DPfbcynScore + a.V14IScore + a.V15FlSocScore + a.V16PImscore + a.V17DFlAamScore + a.V18FlUfPfbeffScore + a.V19IScore + a.V20PResScore + a.V21FlAePfbeffScore + a.V22IResScore + a.V23PResScore + a.V24VaFlAeScore + a.V25VaFlAeScore + a.V26VaFlCgScore + a.V27VaPafulPfbeffScore + a.V28VaPacapScore + a.V29VaOafulScore + a.V30VaOatrtEmPfbeffScore + a.V31VaPatrtEmScore + a.V32VaOacapRscEmPfbrscScore + a.V33VaOatrtPfbcynScore + a.V34VaPatrtEmPfbcynScore + a.V35VaOacapDmdPfbdmdScore).ToList();
+        vscore = vresult[resultId].ToString();
+        */
+
+
+    }
+
+}

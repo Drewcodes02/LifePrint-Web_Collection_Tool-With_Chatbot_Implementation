@@ -1,0 +1,50 @@
+﻿@page "/survey/{surveyId:int}"
+
+<h3>@surveyName</h3>
+
+@if (surveyID == 0)
+{
+    <div class="row">
+        <div class="col-sm-8">
+            <iframe src="https://chats.landbot.io/v3/H-1096727-YDJSHIFAA2S7WSO0/index.html"></iframe>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public int surveyID { get; set; }
+    private string surveyName;
+
+
+    protected override Task OnInitializedAsync()
+    {
+        switch (surveyID)
+        {
+            case 0:
+                surveyName = "Health";
+                break;
+            case 1:
+                surveyName = "Being";
+                break;
+            case 2:
+                surveyName = "Socail";
+                break;
+            case 3:
+                surveyName = "Wealth";
+                break;
+            case 4:
+                surveyName = "Vocation";
+                break;
+            default:
+                surveyName = "Error.";
+                break;
+        }
+
+        return Task.CompletedTask;
+    }
+
+
+}

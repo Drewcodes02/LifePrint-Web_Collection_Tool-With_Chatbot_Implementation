@@ -1,0 +1,63 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "LifeprintDatabaseContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "LifePrint",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Being]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Health]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Results]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Social]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Vocation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Wealth]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "LifePrintDB2",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

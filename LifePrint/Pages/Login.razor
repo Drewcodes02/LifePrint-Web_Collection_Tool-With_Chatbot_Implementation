@@ -1,0 +1,40 @@
+﻿@page "/login"
+<title>Login</title>
+<div class="login">
+    <h1>Login</h1>
+    <form method="post">
+        <input type="text" name="u" placeholder="Email" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+</div>
+
+
+
+@code
+{
+    private string Email { get; set; }
+    private string password { get; set;
+    }
+
+    string Color = "black";
+    string text = "";
+    private void Submit()
+    {
+        if(Email == "Lifeprint@lifeprint.com" && password == "1234")
+        {
+            Color = "green";
+            text = "Welcome Tom";
+            Email = "";
+            password = "";
+        }
+        else
+        {
+            Color = "red";
+            text = "User Password Wrong";
+            Email = "";
+            password = "";
+        }
+    }
+
+}
